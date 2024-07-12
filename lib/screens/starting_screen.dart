@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StartingScreen extends StatelessWidget {
   const StartingScreen(this.switchScreenFunc, {super.key});
 
- final void Function() switchScreenFunc;
+  final void Function() switchScreenFunc;
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +22,14 @@ class StartingScreen extends StatelessWidget {
           const SizedBox(
             height: 80,
           ),
-          const Opacity(
+          Opacity(
             opacity: 0.5,
             child: Text(
               'Learn Flutter the fun Way',
-              style: TextStyle(
+              style: GoogleFonts.montserrat(
                 color: Colors.white,
-                fontSize: 24.0,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
@@ -42,10 +44,13 @@ class StartingScreen extends StatelessWidget {
             label: const Text('Start Quiz'),
             onPressed: switchScreenFunc,
             style: OutlinedButton.styleFrom(
-                foregroundColor: Colors.white,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(2)),
-                )),
+              foregroundColor: Colors.white,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(2),
+                ),
+              ),
+            ),
           ),
         ],
       ),
